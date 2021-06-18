@@ -3,9 +3,14 @@
 
 #include <stdbool.h>
 
-typedef struct _s_abb * abb;
-
 typedef int abb_elem;
+
+typedef struct _s_abb
+{
+    abb_elem elem;
+    struct _s_abb *left;
+    struct _s_abb *right;
+}*abb;
 
 abb abb_empty(void);
 

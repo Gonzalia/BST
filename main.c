@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "util.h"
 #include "abb.h" /* TAD abb */
 
 
@@ -68,10 +69,8 @@ int main(int argc, char *argv[]) {
     /* parse the file to obtain an abb with the elements */
     abb tree = abb_from_file(filepath);
 
-
-
     /*dumping the tree*/
-    abb_dump(tree);
+    printAbb(tree);
     printf("\n");
     printf("raiz: %d\nminimo: %d\nmaximo: %d\nlength: %d\n", abb_root(tree),
            abb_min(tree),
@@ -93,7 +92,7 @@ int main(int argc, char *argv[]) {
             scanf("%d", &del);
             tree = abb_remove(tree, del);
         }
-        abb_dump(tree);
+        printAbb(tree);
         printf("\n");
         printf("raiz: %d\nminimo: %d\nmaximo: %d\nlength: %d\n", abb_root(tree),
                abb_min(tree),
@@ -105,7 +104,7 @@ int main(int argc, char *argv[]) {
     }
 
     printf("Arbol final: \n");
-    abb_dump(tree);
+    printAbb(tree);
     printf("\n");
     printf("raiz: %d\nminimo: %d\nmaximo: %d\nlength: %d\n", abb_root(tree),
            abb_min(tree),

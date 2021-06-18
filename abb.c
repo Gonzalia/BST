@@ -4,13 +4,6 @@
 #include <assert.h>
 #include "abb.h"
 
-struct _s_abb
-{
-    abb_elem elem;
-    struct _s_abb *left;
-    struct _s_abb *right;
-};
-
 static bool elem_eq(abb_elem a, abb_elem b)
 {
     return a == b;
@@ -225,7 +218,6 @@ abb_elem abb_min(abb tree){
 }
 
 void abb_dump(abb tree){
-
     assert(invrep(tree));
     if (tree != NULL){
         printf("%d ", tree->elem);
