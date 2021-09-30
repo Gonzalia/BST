@@ -15,7 +15,7 @@ static bool elem_less(abb_elem a, abb_elem b)
 }
 
 
-//---- Invariante
+//---- Invariant
 static bool check_greater (abb_elem e, abb tree){
     bool greater = true;
     if(tree != NULL){
@@ -49,7 +49,7 @@ static bool invrep(abb tree){
 }
 
 
-// ------------ Fin del invariante
+
 
 
 abb abb_empty(void){
@@ -163,12 +163,10 @@ abb abb_remove(abb tree, abb_elem e)
             return temp;
         }
 
-            /*caso 2 hijos*/
+            
         else{
-            /* encuentro al MENOR elemento del subarbol derecho,  mi sucesor */
+            
             abb_elem sucesor = abb_min(tree->right);
-
-            /* swapeo el elemento a borrar con los datos del sucesor */
             tree->elem = sucesor;
             tree->right = abb_remove(tree->right,sucesor);
         }
